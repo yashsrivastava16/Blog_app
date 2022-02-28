@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
     res.send("The Api is running")
 })
 
-// Declaring the port where the application will run
+// Declaring the port where the application will run.
 const PORT = process.env.PORT || 8080;
 app.listen(PORT,()=>{
     console.log(`Application is running at port ${PORT}`);
