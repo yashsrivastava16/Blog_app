@@ -46,3 +46,10 @@
   margin-right: 15px;
   cursor: pointer;
 }
+
+.navSocial:hover,
+.navListItem:hover,
+.navUser:hover, 
+.navSearch:hover {
+  color: #9c7b46;
+}
