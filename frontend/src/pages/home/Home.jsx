@@ -1,6 +1,6 @@
 import Header from '../../components/header/Header'
 import PostGrid from '../../components/postgrid/PostGrid';
-import { Sidebar } from '../../components/sidebar/Sidebar';
+import Sidebar from '../../components/sidebar/Sidebar';
 import './home.css';
 
 const Home = () => {

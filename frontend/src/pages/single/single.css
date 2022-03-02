@@ -1,0 +1,5 @@
+.single {
+  display: flex;
+  padding: 40px 75px;
+  gap: 50px;
+}

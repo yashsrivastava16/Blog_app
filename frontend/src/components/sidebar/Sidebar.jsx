@@ -4,9 +4,9 @@ export const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebarItem">
-        <span className="sidebarTitle">ABOUT ME</span>
-        <img
-          src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg"
+        <span className="sidebarTitle">ABOUT US</span>
+        <img className='sidebarImg'
+          src="https://images.pexels.com/photos/10555724/pexels-photo-10555724.jpeg?auto=compress&cs=tinysrgb&dpr=2"
           alt=""
         />
         <p>
@@ -48,3 +48,5 @@ export const Sidebar = () => {
     </div>
   )
 }
+
+export default Sidebar

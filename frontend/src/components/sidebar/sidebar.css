@@ -38,6 +38,10 @@
   padding: 30px 40px;
 }
 
+.sidebarImg {
+  object-fit: cover;
+}
+
 .sidebarList {
   list-style: none;
   margin-bottom: 30px;
