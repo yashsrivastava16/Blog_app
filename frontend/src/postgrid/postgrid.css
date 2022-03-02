@@ -1,0 +1,6 @@
+.postgrid {
+  flex: 9;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
