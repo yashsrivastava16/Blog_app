@@ -13,7 +13,7 @@ router.post("/register",async(req,res)=>{
         const user = await newUser.save();
         res.status(200).json(user)
     } catch (error) {
-        res.status(500).json(error);
+        res.status(500).json(`Something went wrong please try again with unique username and password!!`);
     }
 });
 
@@ -31,7 +31,7 @@ router.post("/login",async(req,res)=>{
             res.status(400).json("Wrong Credentials!!")
         }else{
             if(req.body.password == user.password){
-                res.status(200).json(user)
+                res.status(200).json(`login Successfull!!`) //or we can throw the user itself!!
             }else{
                 res.status(400).json("Wrong Credentials!!")
             }
