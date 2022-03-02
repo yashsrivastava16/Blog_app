@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Blog App
+          Blog App with mern
         </a>
       </header>
     </div>
