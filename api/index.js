@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv')
-const authRoute = require('./routes/auth')
-const usersRoute = require('./routes/users')
-const postRoute = require('./routes/posts')
-const catRoute = require('./routes/categories')
+const dotenv = require('dotenv');
+const authRoute = require('./routes/auth');
+const usersRoute = require('./routes/users');
+const postRoute = require('./routes/posts');
+const catRoute = require('./routes/categories');
+const multer =  require("multer");
 
 
 
@@ -23,7 +24,19 @@ mongoose.connect(process.env.DB_URL , {
 }).then(console.log('The Application Is Connected With The Database.'))
   .catch((err)=>console.log("The Database Is Not Connected With application Beacuse Of :",err));
 
+const imageStorage = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,"images");
+    },
+    filename:(req,file,cb)=>{
+        cb(null,"test.jpg") //but when we connect our frontend we'll write here req.body.name
+    },
+});
 
+const upload = multer({storage:imageStorage});
+app.post("/api/upload",upload.single("file"),(req,res)=>{
+    res.status(200).json("img uploaded successfully")
+});
 
 app.use("/api/auth",authRoute);
 
