@@ -3,6 +3,10 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 const authRoute = require('./routes/auth')
+const usersRoute = require('./routes/users')
+const postRoute = require('./routes/posts')
+
+
 
 dotenv.config();
 app.use(express.json());  // for parsing the body data to json.
@@ -20,6 +24,11 @@ mongoose.connect(process.env.DB_URL , {
 
 
 app.use("/api/auth",authRoute);
+
+app.use("/api/users",usersRoute);
+
+app.use("/api/posts",postRoute);
+
 
 
 app.get('/',(req,res)=>{
