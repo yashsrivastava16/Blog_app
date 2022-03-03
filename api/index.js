@@ -5,6 +5,8 @@ const dotenv = require('dotenv')
 const authRoute = require('./routes/auth')
 const usersRoute = require('./routes/users')
 const postRoute = require('./routes/posts')
+const catRoute = require('./routes/categories')
+
 
 
 
@@ -29,6 +31,7 @@ app.use("/api/users",usersRoute);
 
 app.use("/api/posts",postRoute);
 
+app.use("/api/categories",catRoute);
 
 
 app.get('/',(req,res)=>{
