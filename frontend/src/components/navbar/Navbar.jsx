@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
+  let user = false
   return (
     <div className="nav">
       <div className="navLeft">
@@ -12,14 +14,40 @@ const Navbar = () => {
       </div>
       <div className="navCenter">
         <ul className="navList">
-          <li className="navListItem">Home</li>
-          <li className="navListItem">About</li>
-          <li className="navListItem">Contact</li>
-          <li className="navListItem">Write</li>
+          <li className="navListItem">
+            <Link className="link" to="/">Home</Link>
+          </li>
+          <li className="navListItem">
+            <Link className="link" to="/">About</Link>
+          </li>
+          <li className="navListItem">
+            <Link className="link" to="/">Contact</Link>
+          </li>
+          <li className="navListItem">
+            <Link className="link" to="/write">Write</Link>
+          </li>
+          <li className="navListItem">
+            {user && "Logout"}
+          </li>
         </ul>
       </div>
       <div className="navRight">
-        <i className="navUser fa-solid fa-user"></i>
+        {
+          user ? (
+            <Link className="link" to="/settings">
+              <i className="navUser fa-solid fa-user"></i>
+            </Link>
+          ) : (
+            <ul className="navList">
+              <li className="navListItem">
+                <Link className="link" to="/login">Login</Link>
+              </li>
+              <li className="navListItem">
+                <Link className="link" to="/signup">Signup</Link>
+              </li>
+            </ul>
+          )
+        }
         <i className="navSearch fa-solid fa-search"></i>
       </div>
     </div>

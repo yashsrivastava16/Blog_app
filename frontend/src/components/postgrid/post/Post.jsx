@@ -1,6 +1,7 @@
 import './post.css';
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Post = () => {
   return (
@@ -12,7 +13,9 @@ const Post = () => {
       />
       <div className="postInfo">
         <span className="postTitle">
-          Lorem ipsum dolor sit ame
+          <Link className='link' to='/post/123'>
+            Lorem ipsum dolor sit ame
+          </Link>
         </span>
         <hr />
         <span className="postDate">1 hour ago</span>

@@ -8,6 +8,7 @@ import Login from './pages/login/Login'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
+  let user = false;
   return (
     <div className="App">
       <Router>
@@ -17,19 +18,19 @@ function App() {
             <Home />
           </Route>
           <Route path="/signup">
-            <Signup />
+            {user ? <Home /> : <Signup />}
           </Route>
           <Route path="/login">
-            <Login />
+            {user ? <Home /> : <Login />}
           </Route>
           <Route path="/post/:postId">
             <Single />
           </Route>
           <Route path="/write">
-            <Write />
+            {user ? <Write /> : <Login />}
           </Route>
           <Route path="/settings">
-            <Settings />
+            {user ? <Settings /> : <Login />}
           </Route>
         </Switch>
       </Router>
