@@ -20,7 +20,7 @@ router.post("/register",async(req,res)=>{
 
 //Login process
 
-
+// /api/auth/login
 
 router.post("/login",async(req,res)=>{
     try {
