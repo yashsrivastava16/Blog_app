@@ -14,17 +14,16 @@ export default function Post({postData}){
       <div className="postInfo">
         <span className="postTitle">
           <Link className='link' to='/post/123'>
-            Lorem ipsum dolor sit ame
+            {postData.title}
           </Link>
         </span>
         <hr />{console.log(postData)}
-        <span className="postDate">1 day ago</span>
+        <span className="postDate">{postData.createdAt}</span>
       </div>
       <p className="postDesc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
-        fugiat, reprehenderit praesentium blanditiis quos cupiditate ratione
-        atque, exercitationem quibusdam, reiciendis odio laboriosam?
+        {
+          postData.desc
+        }
       </p>
     </div>
   )
