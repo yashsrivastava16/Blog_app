@@ -1,13 +1,16 @@
 import Post from './post/Post';
 import './postgrid.css';
 
-const PostGrid = () => {
+const PostGrid = ({ post }) => {
   return (
     <div className='postgrid'>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {/* {
+        post.map((p)=>{
+          <Post postData={p}/>
+        })
+      } */}
+
+      <Post postData={post}/>
     </div>
   )
 }

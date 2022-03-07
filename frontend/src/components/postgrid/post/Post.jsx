@@ -3,7 +3,7 @@ import './post.css';
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Post = () => {
+export default function Post({postData}){
   return (
     <div className="post">
       <img
@@ -17,8 +17,8 @@ const Post = () => {
             Lorem ipsum dolor sit ame
           </Link>
         </span>
-        <hr />
-        <span className="postDate">1 hour ago</span>
+        <hr />{console.log(postData)}
+        <span className="postDate">1 day ago</span>
       </div>
       <p className="postDesc">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
@@ -29,5 +29,3 @@ const Post = () => {
     </div>
   )
 }
-
-export default Post
