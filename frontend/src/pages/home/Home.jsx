@@ -9,6 +9,7 @@ const Home = () => {
   useEffect(()=>{
     const fetchPost = async () =>{
       const res = await axios.get("/posts");
+      console.log(res);
       setPost(res.data)
     }
     fetchPost()
