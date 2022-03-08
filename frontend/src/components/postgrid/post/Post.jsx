@@ -13,12 +13,12 @@ export default function Post({postData}){
       />
       <div className="postInfo">
         <span className="postTitle">
-          <Link className='link' to='/post/123'>
+          <Link className='link' to={`/post/${postData._id}`}>
             {postData.title}
           </Link>
         </span>
         <hr />{console.log(postData)}
-        <span className="postDate">{postData.createdAt}</span>
+        <span className="postDate">{new Date(postData.createdAt).toDateString()}</span>
       </div>
       <p className="postDesc">
         {
