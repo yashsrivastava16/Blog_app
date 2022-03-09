@@ -4,25 +4,19 @@ import { Link } from 'react-router-dom';
 import './signup.css';
 
 const Signup = () => {
-  const [name, setName] = useState([])
-  const [email, setEmail] = useState([])
-  const [password, setPassword] = useState([])
-  const [error, setError] = useState(false);
+  const [username, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  // const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email, password);
-    setError(false);
-    try {
-      const res = await axios.post("/auth/register/", {
-        name,
-        email,
-        password
-      });
-      res.data && window.location.replace("/login");
-    } catch (err) {
-      setError(true)
-    }
+    const res = await axios.post("/auth/register",{
+      username,
+      email,
+      password
+    });
+    console.log(res);
   }
 
   return (
