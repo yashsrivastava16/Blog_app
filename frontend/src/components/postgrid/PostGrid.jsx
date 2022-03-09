@@ -6,7 +6,7 @@ const PostGrid = ({ post }) => {
     <div className='postgrid'>
       {
         post.map((p)=>{
-          return <Post postData={p}/>
+          return <Post postData={p} key={p._id}/>
         })
       }
     </div>
