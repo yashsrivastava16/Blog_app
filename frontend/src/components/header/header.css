@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 
 .header {
   margin-top: 50px;
 }
 
 .headerTitles {
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
   display: flex;
   flex-direction: column;
   align-items: center;

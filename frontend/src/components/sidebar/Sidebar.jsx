@@ -23,7 +23,7 @@ export const Sidebar = () => {
           alt=""
         />
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolor, neque necessitatibus aspernatur quisquam facilis!
+          This page shares  best articles to read on topics like health, happiness, creativity, productivity and more. The central question that drives my work is, “How can we live better?” To answer that question, I like to write about science-based ways to solve practical problems.
         </p>
       </div>
       <div className="sidebarItem">

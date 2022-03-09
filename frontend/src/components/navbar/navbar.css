@@ -5,6 +5,8 @@
   align-items: center;
   font-size: larger;
   padding: 0 20px;
+  position: sticky;
+  top: 0;
   color: #444;
 }
 
@@ -49,7 +51,7 @@
 
 .navSocial:hover,
 .navListItem:hover,
-.navUser:hover, 
+.navUser:hover,
 .navSearch:hover {
   color: #9c7b46;
 }
