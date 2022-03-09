@@ -4,19 +4,25 @@ import { Link } from 'react-router-dom';
 import './signup.css';
 
 const Signup = () => {
-  const [username, setName] = useState("")
+  const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  // const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("/auth/register",{
-      username,
-      email,
-      password
-    });
-    console.log(res);
+    setError(false)
+    try {
+      const res = await axios.post("/auth/register",{
+        username,
+        email,
+        password
+      });
+      res.data && window.location.replace("/login");
+    } catch (error) {
+      setError(true)
+    }
+    
   }
 
   return (
@@ -25,7 +31,7 @@ const Signup = () => {
       <form action="" className="signupForm" onSubmit={handleSubmit}>
         <div className="signupGroup">
           <label htmlFor="name">Name</label>
-          <input className='signupInput' type="type" name="name" id="name" placeholder="Enter your Name" onChange={e => setName(e.target.value)} />
+          <input className='signupInput' type="type" name="name" id="name" placeholder="Enter your Name" onChange={e => setUsername(e.target.value)} />
         </div>
         <div className="signupGroup">
           <label htmlFor="email">E-mail</label>
@@ -45,6 +51,7 @@ const Signup = () => {
           Login
         </Link>
       </button>
+      {error && <span>Something went wrong!!!</span>}
     </div>
   )
 }
