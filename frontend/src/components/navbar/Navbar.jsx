@@ -4,7 +4,12 @@ import { Context } from "../../context/Context";
 import "./navbar.css";
 
 const Navbar = () => {
-  let { user } = useContext(Context);
+  let { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: "Logout"})
+  }
+
   return (
     <div className="nav">
       <div className="navLeft">
@@ -27,7 +32,7 @@ const Navbar = () => {
           <li className="navListItem">
             <Link className="link" to="/write">Write</Link>
           </li>
-          <li className="navListItem">
+          <li className="navListItem" onClick={handleLogout}>
             {user && "Logout"}
           </li>
         </ul>
