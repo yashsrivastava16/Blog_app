@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {useContext, useRef } from "react";
+import { useContext, useRef } from "react";
 import './login.css';
 import { Context } from '../../context/Context';
 import axios from 'axios';
@@ -7,19 +7,19 @@ import axios from 'axios';
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const {dispatch,user} = useContext(Context)
+  const { dispatch, user } = useContext(Context)
 
-  const handleSubmit = async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch({type:"LoginStart"})
+    dispatch({ type: "LoginStart" })
     try {
-      const res = await axios.post("/auth/login",{
-        email : emailRef.current.value,
-        password : passwordRef.current.value,
+      const res = await axios.post("/auth/login", {
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
       });
-    dispatch({type:"LoginSuccess",payload:res.data})
+      dispatch({ type: "LoginSuccess", payload: res.data })
     } catch (error) {
-    dispatch({type:"LoginFaliure"})
+      dispatch({ type: "LoginFaliure" })
     }
   }
   console.log(user);

@@ -23,14 +23,14 @@ export const Sidebar = () => {
           alt=""
         />
       </div>
-        <p>
-          This page shares  best articles to read on topics like health, happiness, creativity, productivity and more. The central question that drives my work is, “How can we live better?” To answer that question, I like to write about science-based ways to solve practical problems.
-        </p>
+      <p>
+        This page shares  best articles to read on topics like health, happiness, creativity, productivity and more. The central question that drives my work is, “How can we live better?” To answer that question, I like to write about science-based ways to solve practical problems.
+      </p>
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           {
-            cat.map((c)=> (
+            cat.map((c) => (
               <Link className='link' to={`/?cat=${c.name}`}>
                 <li className="sidebarListItem">
                   {c.name}

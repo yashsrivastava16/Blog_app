@@ -9,24 +9,24 @@ import Footer from '../../components/footer/Footer';
 import More from '../../components/moreinfo/More';
 const Home = () => {
   let moreInfo = false;
-  var [posts,setPost] = useState([]);
+  var [posts, setPost] = useState([]);
   const { search } = useLocation();
-  useEffect(()=>{
-    const fetchPost = async () =>{
+  useEffect(() => {
+    const fetchPost = async () => {
       const res = await axios.get("/posts" + search);
       console.log(res);
       setPost(res.data)
     }
     fetchPost()
-  },[search])
+  }, [search])
   return (
     <>
       <Header />
       <div className='home'>
         <PostGrid post={posts} />
-      </div>      
-      {moreInfo ? <More/> : <Footer/>}
-        
+      </div>
+      {moreInfo ? <More /> : <Footer />}
+
     </>
   )
 }

@@ -8,13 +8,13 @@ const SinglePost = () => {
   const path = location.pathname.split("/")[2]
   const [post, setPost] = useState({})
 
-  useEffect(()=>{
-    const getPost = async ()=>{
+  useEffect(() => {
+    const getPost = async () => {
       const res = await axios.get(`/posts/${path}`);
-      setPost(()=>res.data)
+      setPost(() => res.data)
     };
     getPost();
-  },[path])
+  }, [path])
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
@@ -42,7 +42,7 @@ const SinglePost = () => {
           <span>{new Date(post.createdAt).toDateString()}</span>
         </div>
         <p className="singlePostDesc">
-         {post.desc}
+          {post.desc}
         </p>
       </div>
     </div>
