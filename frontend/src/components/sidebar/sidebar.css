@@ -1,10 +1,10 @@
 .sidebar {
-  flex: 3;
+  /* flex: 3; */
   height: fit-content;
   padding: 30px 0;
-  background-color: #fdfbfb;
+  background-color: #000000;
   border-radius: 10px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
@@ -13,6 +13,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+p {
+  color: #ffffff;
 }
 
 .sidebarTitle {
@@ -24,7 +27,7 @@
   text-align: center;
   font-size: 16px;
   line-height: 19px;
-  color: #222222;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -52,6 +55,7 @@
   width: 50%;
   margin-top: 15px;
   cursor: pointer;
+  color: #a7a4a4;
 }
 
 .sidebarSocial {
@@ -65,4 +69,5 @@
 .sidebarIcon {
   font-size: 20px;
   margin-left: 10px;
+  color: #ffffff;
 }
