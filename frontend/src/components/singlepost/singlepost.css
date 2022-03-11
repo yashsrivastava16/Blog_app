@@ -44,7 +44,7 @@
   color: #be9656;
 }
 
-.singlePostAuthor{
+.singlePostAuthor {
   margin-left: 5px;
 }
 
@@ -58,4 +58,22 @@
   margin-left: 20px;
   font-size: 30px;
   font-weight: 600;
+}
+
+.updatebutton {
+  height: 7vh;
+  width: 20vh;
+  background-color: rgb(231, 231, 231);
+  margin-left: 170vh;
+}
+.singlePostDescUpdate {
+  height: 20vh;
+  width: 100%;
+  font-size: 20px;
+}
+.singlePostTitleUpdate {
+  height: 5vh;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
 }

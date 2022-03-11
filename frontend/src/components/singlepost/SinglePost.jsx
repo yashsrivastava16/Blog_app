@@ -51,7 +51,7 @@ const SinglePost = () => {
           src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
           alt=""
         />
-        {afterupdate ? (<input type="text" value={title} className="singlePostTitle" onChange={(e)=>setTitle(e.target.value)}></input>):
+        {afterupdate ? (<input type="text" value={title} className="singlePostTitleUpdate" onChange={(e)=>setTitle(e.target.value)}></input>):
         (
           <h1 className="singlePostTitle">
           {post.title}
@@ -74,14 +74,14 @@ const SinglePost = () => {
           </span>
           <span>{new Date(post.createdAt).toDateString()}</span>
         </div>
-        {afterupdate?(<textarea value={desc} className="singlePostDesc" onChange={(e)=>setDesc(e.target.value)}></textarea>) : (
+        {afterupdate?(<textarea value={desc} className="singlePostDescUpdate" onChange={(e)=>setDesc(e.target.value)}></textarea>) : (
         <p className="singlePostDesc">
           {post.desc}
         </p>
         )}
       </div>
       {afterupdate && 
-      <button onClick={handleUpdate}>Update</button>
+      <button onClick={handleUpdate} className="updatebutton">Update</button>
       }
     </div>
   )
