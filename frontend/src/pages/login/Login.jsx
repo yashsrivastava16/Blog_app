@@ -7,7 +7,7 @@ import axios from 'axios';
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const {dispatch,user} = useContext(Context)
+  const {dispatch,isFetching,user} = useContext(Context)
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
@@ -23,6 +23,7 @@ const Login = () => {
     }
   }
   console.log(user);
+  console.log(isFetching);
   return (
     <div className='login'>
       <span className="loginTitle">Login</span>
