@@ -66,6 +66,10 @@
   background-color: lightcoral;
 }
 
+.loginButton:disabled {
+  cursor: not-allowed;
+}
+
 .loginSignupButton {
   background-color: teal;
 }

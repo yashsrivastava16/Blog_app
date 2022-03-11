@@ -33,7 +33,7 @@ router.post("/login", async (req, res) => {
       res.status(400).json("Wrong Credentials!!");
     } else {
       if (req.body.password == user.password) {
-        res.status(200).json(`login Successfull!!`); //or we can throw the user itself!!
+        res.status(200).json(user); //or we can throw the user itself!!
       } else {
         res.status(400).json("Wrong Credentials!!");
       }
