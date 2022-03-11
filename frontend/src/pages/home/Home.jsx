@@ -5,7 +5,10 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import './home.css';
 import axios from "axios";
 import { useLocation } from 'react-router-dom';
+import Footer from '../../components/footer/Footer';
+import More from '../../components/moreinfo/More';
 const Home = () => {
+  let moreInfo = false;
   var [posts,setPost] = useState([]);
   const { search } = useLocation();
   useEffect(()=>{
@@ -21,8 +24,9 @@ const Home = () => {
       <Header />
       <div className='home'>
         <PostGrid post={posts} />
-        <Sidebar />
-      </div>
+      </div>      
+      {moreInfo ? <More/> : <Footer/>}
+        
     </>
   )
 }
