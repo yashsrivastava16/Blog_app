@@ -6,9 +6,11 @@ import Write from "./pages/write/Write";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 function App() {
-  let user = false;
+  let { user } = useContext(Context);
   return (
     <div className="App">
       <Router>

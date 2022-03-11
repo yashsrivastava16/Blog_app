@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 import "./navbar.css";
 
 const Navbar = () => {
-  let user = false
+  let { user } = useContext(Context);
   return (
     <div className="nav">
       <div className="navLeft">
