@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 import Header from '../../components/header/Header'
 import PostGrid from '../../components/postgrid/PostGrid';
-import Sidebar from '../../components/sidebar/Sidebar';
 import './home.css';
 import axios from "axios";
 import { useLocation } from 'react-router-dom';
-import Footer from '../../components/footer/Footer';
 import More from '../../components/moreinfo/More';
+
 const Home = () => {
-  let moreInfo = false;
   var [posts, setPost] = useState([]);
+  const [showFooter, setShowFooter] = useState(false);
   const { search } = useLocation();
+
+  const toggleFooter = () => {
+    setShowFooter(true)
+  }
+
   useEffect(() => {
     const fetchPost = async () => {
       const res = await axios.get("/posts" + search);
@@ -19,13 +23,19 @@ const Home = () => {
     }
     fetchPost()
   }, [search])
+
   return (
     <>
       <Header />
       <div className='home'>
         <PostGrid post={posts} />
       </div>
-      {moreInfo ? <More /> : <Footer />}
+      {showFooter ? <More /> : (
+        <div className='footer'>
+          <p className='info'>This page shares  best articles to read on topics like happiness, creativity, productivity......</p>
+          <button className='footerbutton' onClick={toggleFooter}>More...</button>
+        </div>
+      )}
 
     </>
   )
