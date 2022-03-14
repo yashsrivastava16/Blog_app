@@ -24,12 +24,6 @@ const Navbar = () => {
             <Link className="link" to="/">Home</Link>
           </li>
           <li className="navListItem">
-            <Link className="link" to="/">About</Link>
-          </li>
-          <li className="navListItem">
-            <Link className="link" to="/">Contact</Link>
-          </li>
-          <li className="navListItem">
             <Link className="link" to="/write">Write</Link>
           </li>
           <li className="navListItem" onClick={handleLogout}>
@@ -54,7 +48,6 @@ const Navbar = () => {
             </ul>
           )
         }
-        <i className="navSearch fa-solid fa-search"></i>
       </div>
     </div>
   )
